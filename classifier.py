@@ -18,7 +18,7 @@ class ImageClassifier:
 
         print("Loading MobileNetV2 model...")
 
-        # Load pretrained MobileNetV2
+        # Load pretrained model weights
         self.weights = (
             MobileNet_V2_Weights.DEFAULT
         )
@@ -27,15 +27,15 @@ class ImageClassifier:
             weights=self.weights
         )
 
-        # Evaluation mode
+        # Set model to evaluation mode
         self.model.eval()
 
-        # Image preprocessing
+        # Get preprocessing pipeline
         self.preprocess = (
             self.weights.transforms()
         )
 
-        # ImageNet class labels
+        # Get ImageNet class labels
         self.categories = (
             self.weights.meta["categories"]
         )
@@ -90,7 +90,7 @@ class ImageClassifier:
                 image_tensor
             )
 
-        # Convert output to probabilities
+        # Convert outputs into probabilities
         probabilities = torch.nn.functional.softmax(
             outputs,
             dim=1
