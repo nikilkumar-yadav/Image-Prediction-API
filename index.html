@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VisionPredict AI</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    VP
+                </div>
+
+                <div>
+                    <h1>VisionPredict</h1>
+                    <p>AI Image Classification</p>
+                </div>
+            </div>
+
+            <div class="api-status">
+                <span class="status-dot"></span>
+                API Online
+            </div>
+
+        </header>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <section class="hero">
+
+                <p class="eyebrow">
+                    AI POWERED IMAGE ANALYSIS
+                </p>
+
+                <h2>
+                    Discover what's<br>
+                    <span>inside your image.</span>
+                </h2>
+
+                <p class="hero-description">
+                    Upload an image and let our AI model
+                    identify what it contains with
+                    confidence scores.
+                </p>
+
+            </section>
+
+
+            <!-- Upload Card -->
+            <section class="upload-card">
+
+                <div
+                    class="upload-area"
+                    id="uploadArea"
+                >
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+                    <h3>
+                        Upload your image
+                    </h3>
+
+                    <p>
+                        Drag & drop your image here
+                        or choose a file
+                    </p>
+
+                    <button
+                        type="button"
+                        class="choose-button"
+                        id="chooseButton"
+                    >
+                        Choose Image
+                    </button>
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/jpeg,image/png,image/webp"
+                        hidden
+                    >
+
+                    <p class="file-info">
+                        JPG, PNG or WEBP
+                    </p>
+
+                </div>
+
+
+                <!-- Image Preview -->
+                <div
+                    class="preview-container"
+                    id="previewContainer"
+                    hidden
+                >
+
+                    <img
+                        id="imagePreview"
+                        alt="Selected image"
+                    >
+
+                    <div class="preview-details">
+
+                        <p id="fileName">
+                            image.jpg
+                        </p>
+
+                        <button
+                            type="button"
+                            id="removeButton"
+                            class="remove-button"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Predict Button -->
+                <button
+                    type="button"
+                    id="predictButton"
+                    class="predict-button"
+                    disabled
+                >
+                    <span id="buttonText">
+                        Predict Image
+                    </span>
+
+                    <span
+                        id="loadingSpinner"
+                        class="spinner"
+                        hidden
+                    ></span>
+                </button>
+
+            </section>
+
+
+            <!-- Result Card -->
+            <section
+                class="result-card"
+                id="resultCard"
+                hidden
+            >
+
+                <div class="result-header">
+
+                    <div>
+                        <p class="result-label">
+                            AI PREDICTION
+                        </p>
+
+                        <h3 id="predictionLabel">
+                            —
+                        </h3>
+                    </div>
+
+                    <div class="confidence">
+                        <span id="confidenceValue">
+                            0%
+                        </span>
+
+                        <small>
+                            Confidence
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <!-- Confidence Bar -->
+                <div class="confidence-bar">
+
+                    <div
+                        id="confidenceProgress"
+                        class="confidence-progress"
+                    ></div>
+
+                </div>
+
+
+                <!-- Alternatives -->
+                <div class="alternatives">
+
+                    <h4>
+                        Other possibilities
+                    </h4>
+
+                    <div id="alternativeList">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Error -->
+            <div
+                id="errorMessage"
+                class="error-message"
+                hidden
+            ></div>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                VisionPredict AI
+            </p>
+
+            <div>
+                <a
+                    href="/docs"
+                    target="_blank"
+                >
+                    API Documentation
+                </a>
+
+                <span>•</span>
+
+                <span>
+                    v1.0.0
+                </span>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
