@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi import Request
 
-from models.classifier import ImageClassifier
+from classifier import ImageClassifier
 
 
 # ============================================================
